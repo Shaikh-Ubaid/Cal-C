@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cal C</title>
+
+	<style>
+		*
+		{
+			margin:0px;
+		}
+		body
+		{
+			width:500px;
+			margin: auto;
+		}
+		.container
+		{
+			border: 4px solid black;
+			position: relative;
+		}
+		.screen
+		{
+			background-color: lightgrey;
+		}
+		.screen h1 input
+		{
+			font-size: 38px;
+			text-align: right;
+			height: 100px;
+			width: 425px;
+			float: right;
+		}
+		.bottom ul li
+		{
+			list-style: none;
+			font-size: 40px;
+			float: left;
+			margin-right: 25px;
+			padding: 5px 10px;
+			background-color: white;
+			cursor: pointer;
+		}
+		.bottom
+		{
+			margin-left: 17px;
+			width: 350px;
+			float: left;
+			background-color: red;
+		}
+		.clearfix:after 
+		{
+		   content: " "; /* Older browser do not support empty content */
+		   visibility: hidden;
+		   display: block;
+		   height: 0;
+		   clear: both;
+		}
+		.signs
+		{
+			width: 100px;
+			float: right;
+			margin-right: 17px;
+
+		}
+		.signs ul li
+		{
+			list-style: none;
+			font-size: 25px;
+			float: left;
+			margin-right: 25px;
+			padding: 5px 10px;
+			cursor: pointer;
+		}
+		.equals
+		{
+			clear: both;
+			margin-left: 200px;
+			cursor: pointer;
+		}
+		.noselect ul li {
+  		-webkit-touch-callout: none; /* iOS Safari */
+    	-webkit-user-select: none; /* Safari */
+     	-khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+		}
+		.result
+		{
+			display: block;
+		}
+		.noresult
+		{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="screen clearfix">
+			<h1><input type="textbox" onkeypress="return isNumberKey(this, event)"></h1>
+			<h2 style="float: left; font-size: 25px;" class="noresult">=</h2>
+		</div>
+		<div class="bottom noselect clearfix">
+			<ul>
+				<li>0</li>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>.</li>
+
+			</ul>
+		</div>
+		<div class="signs noselect clearfix">
+			<ul>
+				<li>+</li>
+				<li>-</li>
+				<li>*</li>
+				<li>/</li>
+
+			</ul>
+		</div>
+		<h1 class="equals">=</h1>
+	</div>
+	<script>
+		var pressed=document.querySelectorAll('.bottom ul li');
+		var Screen=document.querySelector('.screen h1 input');
+		var equal=document.querySelector('.equals');
+		var signPressed=document.querySelectorAll('.signs ul li');
+		var firstTerm;
+		var clearScreen;
+		// var operation;
+		for(var i=0;i<pressed.length;i++)
+		{
+			pressed[i].addEventListener('click',function(){
+			if(clearScreen)
+			{
+				Screen.value='';
+				clearScreen=false;
+			}
+			Screen.value+=this.innerHTML;
+		});
+		}
+		for(var i=0;i<signPressed.length;i++)
+		{
+			signPressed[i].addEventListener('click',function(){
+			firstTerm=Number(Screen.value);
+			operation=this.innerHTML;
+			Screen.value='';
+		document.querySelector('.screen h2').classList.add("noresult");
+		document.querySelector('.screen h2').classList.remove("result");
+
+
+		});
+		}
+		equal.addEventListener('click', function(){
+		switch(operation) 
+		{
+			
+		  case '+': Screen.value=Number(Screen.value)+firstTerm;
+		    	break;
+		  case '-': Screen.value=firstTerm-Number(Screen.value);
+		  		break;
+		  case '*': Screen.value=Number(Screen.value)*firstTerm;
+		    	break;
+		  case '/': Screen.value=firstTerm/Number(Screen.value);
+		    	break;
+		}
+		document.querySelector('.screen h2').classList.add("result");
+		document.querySelector('.screen h2').classList.remove("noresult");
+
+			clearScreen=true;
+		})
+		function isNumberKey(txt, evt) 
+		{
+		    var charCode = (evt.which) ? evt.which : evt.keyCode;
+		    switch(charCode)
+			{
+				case 43: signPressed[0].click(); break;
+				case 45: signPressed[1].click(); break;
+				case 42: signPressed[2].click(); break;
+				case 47: signPressed[3].click(); break;
+				case 13: equal.click(); break;
+			}
+		    if (charCode == 46) {
+		        //Check if the text already contains the . character
+		        if (txt.value.indexOf('.') === -1) {
+		            return true;
+		        } else {
+		            return false;
+		        }
+		    } else {
+		        if (charCode > 31
+		             && (charCode < 48 || charCode > 57))
+		            return false;
+		    }
+		    return true;
+		}
+		
+	</script>
+</body>
+</html>
