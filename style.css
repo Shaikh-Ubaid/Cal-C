@@ -1,0 +1,290 @@
+*
+{
+	margin:0px;
+}
+body
+{
+	width: 100%;
+}
+.nameplate
+{
+	float: left;
+	margin-right: 200px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+.nameplate img
+{
+	float: left;
+}
+.container
+{
+	float: left;
+	width:490px;
+	margin: auto;
+	box-shadow: 10px 10px 5px grey;
+	padding: 25px;
+	border: 2px solid black;
+	border-radius: 65px;
+	position: relative;
+}
+.screen
+{
+	background-color: lightgrey;
+}
+.screen h1 input
+{
+	font-size: 55px;
+	text-align: right;
+	height: 100px;
+	width: 410px;
+	padding-right: 10px;
+	padding-left: 5px;
+	float: right;
+	letter-spacing: 5px;
+	text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF, 7px 7px 7px #000000;
+	color:white;
+}
+.numpad ul li
+{
+	list-style: none;
+	margin: 5px;
+	width: 48px;
+	height: 46px;
+	font-size: 40px;
+	text-indent: -9999px;
+	float: left;
+	padding: 10px;
+	background-color: white;
+	cursor: pointer;
+}
+
+.numpad ul li:active
+{
+	border: 2px solid black;
+	width: 44px;
+	height: 42px;
+}
+.numpad
+{
+	float: left;
+}
+.numpad ul
+{
+	width: 250px;
+	background-color: red;
+}
+.clearfix:after 
+{
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.signs
+{
+	padding-top: 12px;
+	width: 100px;
+	float: right;
+	margin-right: 20px;
+
+}
+.signs ul li
+{
+	list-style: none;
+	font-size: 25px;
+	margin-top: 14px;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	padding-top: 8px;
+	text-indent: -9999px;
+}
+.signs ul li:active
+{
+	border: 2px solid black;
+	width: 46px;
+	height: 46px;
+
+}
+.equals
+{
+	clear: both;
+    width: 40px;
+    height: 30px;
+    position: relative;
+    left: 200px;
+    top: -68px;
+    padding: 15px;
+    cursor: pointer;
+	text-indent: -9999px;
+}
+.equals:active
+{
+	border: 2px solid black;
+	width: 42px;
+	height: 26px;
+}
+
+.noselect ul li {
+	-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* Internet Explorer/Edge */
+user-select: none; /* Non-prefixed version, currently
+                          supported by Chrome and Opera */
+}
+.result
+{
+	display: block;
+}
+.noresult
+{
+	display: none;
+}
+#zero
+{
+	background: url(images/zero.gif) no-repeat;
+}
+#one
+{
+	background: url(images/one.gif) no-repeat;
+}
+#two
+{
+	background: url(images/two.gif) no-repeat;
+}
+#three
+{
+	background: url(images/three.gif) no-repeat;
+
+}
+#four
+{
+	background: url(images/four.gif) no-repeat;
+}
+#five
+{
+	background: url(images/five.gif) no-repeat;
+}
+#six
+{
+	background: url(images/six.gif) no-repeat;
+}
+#seven
+{
+	background: url(images/seven.gif) no-repeat;
+}
+#eight
+{
+	background: url(images/eight.gif) no-repeat;
+}
+#nine
+{
+	background: url(images/nine.gif) no-repeat;
+}
+#dot
+{
+	background: url(images/dot.gif) no-repeat;
+	
+	background-position: right;
+
+}
+#plus
+{
+	background: url(images/plus.gif) no-repeat;
+}
+#minus
+{
+	background: url(images/minus.gif) no-repeat;
+}
+#multiply
+{
+	background: url(images/multiply.gif) no-repeat;
+	background-size: 42px 42px;
+}
+#divide
+{
+	background: url(images/divide.gif) no-repeat;
+	background-size: 42px 42px;
+}
+#sin
+{
+	background: url(images/sin.gif) no-repeat;
+	background-size: 74px 45px;
+}
+#cos
+{
+	background: url(images/cos.gif) no-repeat;
+	background-size: 74px 45px;
+}
+#tan
+{
+	background: url(images/tan.gif) no-repeat;
+	background-size: 74px 45px;
+}
+#log
+{
+	background: url(images/log.gif) no-repeat;
+	background-size: 74px 45px;
+}
+#e
+{
+	background: url(images/equals.gif) no-repeat;
+	background-size: 80px 60px;
+}
+.func ul li
+{
+	float: right;
+	list-style: none;
+	margin-bottom: 32px;
+	border: none;
+	text-align: center;
+	text-indent: -9999px;
+	margin-left: 10px;
+	font-size: 37px;
+	width: 80px;
+	box-shadow: 0 9px #999;
+	border-radius: 25px;
+	cursor: pointer;
+}
+.func ul
+{
+	padding-top: 20px;
+}
+.func ul li:active
+{
+	
+	box-shadow: 0 5px #666;
+		transform: translateY(4px);
+}
+.symbols div
+{
+	float: left;
+	margin-right: 25px;
+	border-radius: 15px;
+	padding: 5px;
+	box-shadow: 3px 9px #999;
+}
+.symbols div img
+{
+	padding-top: 10px;
+}
+.symbols div:active
+{
+	box-shadow: 1px 5px #666;
+		transform: translateY(4px);
+}
+.symbols
+{
+	width:450px;
+	margin-left: 52px;
+	margin-bottom: 15px;
+}
+.bottom
+{
+	margin-left: -15px;
+	height: 400px;
+}
